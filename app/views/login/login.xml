@@ -1,0 +1,11 @@
+<Page loaded="loaded">
+  <StackLayout orientation="vertical">
+    <Image src="~/images/logo.png" class="logo"/>
+    <Label text="Welcome to Safe Space" class="welcome-message"/>
+    <TextField id="email" text="{{ email }}" hint="Email Address" keyboardType="email" autocorrect="false" autocapitalizationType="none" />
+    <TextField secure="true" text="{{ password }}" hint="Password" />
+    <Button text="Sign in" class="link" tap="signIn"/>
+    <Button text="Sign up for Safe Space" tap="register"/>
+    <Button text="Show dialog" tap="buttonTap" />
+  </StackLayout>
+</Page>

@@ -1,0 +1,39 @@
+{
+  "name": "Work",
+  "version": "1.0.0",
+  "description": "Safe spaces app",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "NativeScript"
+  ],
+  "author": "Mike",
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "nativescript": {
+    "id": "com.all.work",
+    "tns-ios": {
+      "version": "2.1.1"
+    }
+  },
+  "dependencies": {
+    "nativescript-dialog": "0.0.8",
+    "nativescript-enumerable": "^3.4.0",
+    "nativescript-local-notifications": "^1.0.2",
+    "nativescript-socketio": "^2.1.3",
+    "nativescript-stringformat": "^2.3.4",
+    "tns-core-modules": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.12.0",
+    "babel-types": "6.11.1",
+    "babylon": "6.8.4",
+    "lazy": "1.0.11",
+    "typescript": "^1.8.10"
+  }
+}
