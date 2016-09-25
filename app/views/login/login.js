@@ -5,12 +5,6 @@ var fetchModule = require("fetch");
 var user = new UserViewModel();
 var http = require("http");
 
-//start nativescript-dialog stuff
-// var platform = require("platform");
-// var application = require("application");
-// var dialog = require("nativescript-dialog");
-//end nativescript-dialog stuff
-
 // var Promise = require('bluebird');
 // const StringFormat = require("nativescript-stringformat");
 // var StringBuilder = require("nativescript-stringformat");
@@ -28,25 +22,6 @@ var config = require("../../shared/config");
 
 var opts = {};
 var url = config.apiUrl;
-var nativescript_socketio_1 = require('nativescript-socketio');
-var socketIO;
-socketIO = new nativescript_socketio_1.SocketIO(url,opts);
-
-socketIO.on('connect', function (data) {
-  console.log("Socket Connected: ", data);
-  // user.postSocketID(data);
-  // frameModule.topmost().navigate({ moduleName: 'main-page', context: { username: pageData.get("username"), socket: socketIO.instance } })
-});
-socketIO.on('connectedSocketID', function (data) {
-  console.log("connectedSocketID: ", data);
-  user.postSocketID(data);
-  // frameModule.topmost().navigate({ moduleName: 'main-page', context: { username: pageData.get("username"), socket: socketIO.instance } })
-});
-socketIO.on('socketToYou', function (workitem) {
-            console.log("in socketToYou, socketToYou msg, BEFORE::", workitem);
-            console.log("in socketToYou, socketToYou msg, BEFORE::"+ workitem);
-            postWorkID(workitem);
-});
 exports.loaded = function(args) {
     var page = args.object;
     page.bindingContext = user;
@@ -64,7 +39,6 @@ exports.signIn = function() {
         .then(function() {
             frameModule.topmost().navigate("views/list/list");
             requestLocalNotificationsPermission();
-            socketIO.connect();
         });
 };
 
